@@ -1,15 +1,14 @@
 <h1 align="center">Numerical Methods Lab Assignment</h1>
 
-## Table of Contents
+# Table of Contents
 1. [Features](#features)
 2. [Requirements](#requirements)
 3. [Algorithm Explanation](#algorithm-explanation)
-4. [Example Walkthrough](#example-walkthrough)
 5. [Contributions](#contributions)
 
 ---
 
-### Features
+# Features
 
 - **Input Flexibility**: Accepts user input for any number of linear equations.
 - **Pivoting**: Uses partial pivoting for numerical stability.
@@ -18,15 +17,17 @@
 
 ---
 
-### Requirements
+# Requirements
 
 - **C++ Compiler**: GCC, Clang, or any C++11 compatible compiler.
 - **Console Input**: Basic command-line interface for matrix input.
 
 ---
 
-### Algorithm Explanation
+# Algorithm Explanation
 
+## Linear Equations
+---
 ## Jacobi Iterative Method
 
 The Jacobi iterative method can solve any number of systems of linear equations.
@@ -53,20 +54,6 @@ The Gauss-Seidel iterative method can solve any number of systems of linear equa
 
 ---
 
-## Matrix Inversion
-
-This program finds the inverse of any n x n singular matrix using the Jordan elimination method and row echelon form.
-
-1. The program first takes input `n` and creates an n x 2n matrix using a vector. The first `n` columns are initialized with the user's given matrix, and the next `n` columns are initialized with an identity matrix.
-
-2. It checks if any row has `0` as a pivot element. If so, it swaps with another row. If no swapping is possible and the pivot element is still zero, the matrix is singular, and the inverse is not possible. The program exits.
-
-3. It transforms the n x n lower triangular matrix to 0 while performing operations on the entire n x 2n matrix. Then it passes the whole matrix to the `jordanEli()` function to perform the same operations on the upper triangular matrix.
-
-4. Now, the matrix from the nth column to 2n-th column represents the inverse matrix, which is printed.
-
----
-
 ## LU Factorization Method
 
 This method solves a system of linear equations for 2, 3, and 4 variables. Since LU factorization operates on constant time, the equations are hardcoded without loops.
@@ -79,7 +66,7 @@ This method solves a system of linear equations for 2, 3, and 4 variables. Since
 
 ---
 
-# Gauss Elimination Method
+## Gauss Elimination Method
 
 The Gauss Elimination method is a technique for solving systems of linear equations by transforming the system's augmented matrix into an upper triangular form, then performing back substitution to find solutions. Here's a step-by-step explanation of its working principle:
 
@@ -112,7 +99,7 @@ This process results in the solution for the system of equations, provided the m
 
 ---
 
-# Gauss-Jordan Elimination Method
+## Gauss-Jordan Elimination Method
 
 The Gauss-Jordan Elimination method is an extension of the Gaussian elimination method. It further simplifies the system of linear equations by transforming the matrix into a reduced row echelon form. This enables solving the system directly and uniquely. Here is a step-by-step explanation of the working principle:
 
@@ -145,7 +132,9 @@ This method yields the solution to the system of equations (if a unique solution
 
 ---
 
-# Secant Method
+## Non linear equations
+---
+## Secant Method
 
 This method finds all real roots of a polynomial function by combining the Secant Method (an iterative root-finding algorithm) with synthetic division to simplify the polynomial progressively. Below is a step-by-step explanation of the working principle:
 
@@ -176,7 +165,7 @@ This approach provides an efficient way to find multiple roots of a polynomial u
 
 ---
 
-# Newton-Raphson Method
+## Newton-Raphson Method
 
 This method finds all real roots of a polynomial function by combining the Newton-Raphson method (an iterative root-finding algorithm) with synthetic division to progressively simplify the polynomial. Below is a step-by-step explanation of the working principle:
 
@@ -211,21 +200,7 @@ This approach combines the rapid convergence of the Newton-Raphson method with s
 
 ---
 
-# Runge-Kutta (RK) Method
-
-The Runge-Kutta method is an effective technique to solve up to five ordinary differential equations.
-
-1. This program first sets up five functions for solving equations. A switch-case structure exists to choose which function to execute.
-
-2. The `fn()` function takes the current values of `x` and `y` and a parameter `num` to select the equation to be executed.
-
-3. The `runge_Kutta()` function uses the fourth-order Runge-Kutta method to compute and print the values of `x` and `y` over a specified range. `x` and `y` are initialized with the initial values `x0` and `y0`. The step size `h` and the total interval `(interval_2 - x0)` are used to compute the number of steps. For each step, four intermediate slopes, `k1`, `k2`, `k3`, and `k4`, are calculated. These slopes are used to update `y` by a weighted average. `x` is incremented by the step size `h` at each iteration.
-
-4. The `r_k()` function gets input from the user to select one of the five predefined equations. The `runge_Kutta()` function is called with five parameters to compute and display the solution for each step.
-
----
-
-# False Position Method
+## False Position Method
 
 The False Position method can solve any system of linear equations.
 
@@ -239,7 +214,7 @@ The False Position method can solve any system of linear equations.
 
 ---
 
-# Bisection Method
+## Bisection Method
 
 The Bisection method can solve any system of linear equations.
 
@@ -253,14 +228,38 @@ The Bisection method can solve any system of linear equations.
 
 ---
 
-### Example Walkthrough
+## Differential Equations
+---
+## Runge-Kutta (RK) Method
 
+The Runge-Kutta method is an effective technique to solve up to five ordinary differential equations.
 
+1. This program first sets up five functions for solving equations. A switch-case structure exists to choose which function to execute.
+
+2. The `fn()` function takes the current values of `x` and `y` and a parameter `num` to select the equation to be executed.
+
+3. The `runge_Kutta()` function uses the fourth-order Runge-Kutta method to compute and print the values of `x` and `y` over a specified range. `x` and `y` are initialized with the initial values `x0` and `y0`. The step size `h` and the total interval `(interval_2 - x0)` are used to compute the number of steps. For each step, four intermediate slopes, `k1`, `k2`, `k3`, and `k4`, are calculated. These slopes are used to update `y` by a weighted average. `x` is incremented by the step size `h` at each iteration.
+
+4. The `r_k()` function gets input from the user to select one of the five predefined equations. The `runge_Kutta()` function is called with five parameters to compute and display the solution for each step.
 
 ---
 
-### Contributions
+## Matrix Inversion
 
-1. Md. Sorup Rohan - 2107018 - https://github.com/soruprohan
-2. Ariyan Aftab Spandan - 2107045 - https://github.com/redphoenix-05
-3. Md. Sabith - 2107091 - https://github.com/sabithbinfarid
+This program finds the inverse of any n x n singular matrix using the Jordan elimination method and row echelon form.
+
+1. The program first takes input `n` and creates an n x 2n matrix using a vector. The first `n` columns are initialized with the user's given matrix, and the next `n` columns are initialized with an identity matrix.
+
+2. It checks if any row has `0` as a pivot element. If so, it swaps with another row. If no swapping is possible and the pivot element is still zero, the matrix is singular, and the inverse is not possible. The program exits.
+
+3. It transforms the n x n lower triangular matrix to 0 while performing operations on the entire n x 2n matrix. Then it passes the whole matrix to the `jordanEli()` function to perform the same operations on the upper triangular matrix.
+
+4. Now, the matrix from the nth column to 2n-th column represents the inverse matrix, which is printed.
+
+---
+
+# Contributions
+
+#### 1. Md. Sorup Rohan - 2107018 - https://github.com/soruprohan
+#### 2. Ariyan Aftab Spandan - 2107045 - https://github.com/redphoenix-05
+#### 3. Md. Sabith - 2107091 - https://github.com/sabithbinfarid
