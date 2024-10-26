@@ -209,6 +209,8 @@ This method finds all real roots of a polynomial function by combining the Newto
 
 This approach combines the rapid convergence of the Newton-Raphson method with synthetic division, making it efficient for finding multiple roots of a polynomial by iteratively simplifying the polynomial after each root is identified.
 
+---
+
 # Runge-Kutta (RK) Method
 
 The Runge-Kutta method is an effective technique to solve up to five ordinary differential equations.
@@ -248,3 +250,13 @@ The Bisection method can solve any system of linear equations.
 3. The `all_roots()` function iterates over a range (`start` to `ending`), incrementing by `step` to check each subinterval `[i, i + step]`. If the function changes sign within an interval, it calls `Bisection()` with that interval and stores the result in the roots vector. Once all roots within the specified range are found, it prints each root.
 
 4. The `bisection()` function calculates `xmax` to set the search interval to `[-xmax, xmax]`, providing a reasonable range for root-finding based on the polynomial’s behavior. It then calls `all_roots` with a step size of `0.01` and a tolerance of `1e-6` to find and print all roots within the range.
+
+### Example Walkthrough
+
+
+
+### Contributions
+
+1. Md. Sorup Rohan - 2107018 - https://github.com/soruprohan
+2. Ariyan Aftab Spandan - 2107045 - https://github.com/redphoenix-05
+3. Md. Sabith - 2107091 - https://github.com/sabithbinfarid
