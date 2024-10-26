@@ -208,3 +208,43 @@ This method finds all real roots of a polynomial function by combining the Newto
    - The process stops after all real roots have been extracted and displayed.
 
 This approach combines the rapid convergence of the Newton-Raphson method with synthetic division, making it efficient for finding multiple roots of a polynomial by iteratively simplifying the polynomial after each root is identified.
+
+# Runge-Kutta (RK) Method
+
+The Runge-Kutta method is an effective technique to solve up to five ordinary differential equations.
+
+1. This program first sets up five functions for solving equations. A switch-case structure exists to choose which function to execute.
+
+2. The `fn()` function takes the current values of `x` and `y` and a parameter `num` to select the equation to be executed.
+
+3. The `runge_Kutta()` function uses the fourth-order Runge-Kutta method to compute and print the values of `x` and `y` over a specified range. `x` and `y` are initialized with the initial values `x0` and `y0`. The step size `h` and the total interval `(interval_2 - x0)` are used to compute the number of steps. For each step, four intermediate slopes, `k1`, `k2`, `k3`, and `k4`, are calculated. These slopes are used to update `y` by a weighted average. `x` is incremented by the step size `h` at each iteration.
+
+4. The `r_k()` function gets input from the user to select one of the five predefined equations. The `runge_Kutta()` function is called with five parameters to compute and display the solution for each step.
+
+---
+
+# False Position Method
+
+The False Position method can solve any system of linear equations.
+
+1. The `fn()` function calculates the value of the polynomial for a given value of `x` and a vector of coefficients.
+
+2. The `false_Position()` function applies the False Position method to find a root in the interval `[a, b]` with a specified tolerance. It first checks if `fn(a, coefficient) * fn(b, coefficient) >= 0`. If this condition holds, there may be no root within `[a, b]`, so the function returns immediately. In the main loop, it calculates an approximate root `c`. The loop iterates until the function value `fn(c, coefficient)` is within the specified tolerance, or the interval width `[b - a]` becomes smaller than the tolerance. If a root is found, it’s added to the roots vector, and the function returns.
+
+3. The `All_roots()` function scans the interval `[start, ending]` in increments of `step`. For each subinterval `[i, i + step]`, it checks if the function changes sign. If so, there may be a root in that interval, so it calls `false_Position()`.
+
+4. The  `false_position()` gets input from the user, including the polynomial degree and coefficients. It calculates `xmax` to determine a search interval from `-xmax` to `xmax`, providing a reasonable range for root-finding based on the polynomial’s characteristics. The program then calls `All_roots` to find and print all roots within this range.
+
+---
+
+# Bisection Method
+
+The Bisection method can solve any system of linear equations.
+
+1. The `f` function evaluates the polynomial at a given value of `x` using a vector of coefficients.
+
+2. The `Bisection()` function is used to find a root within an interval `[a, b]` using the specified tolerance. First, it checks if `f(a) * f(b) >= 0`, meaning there’s no guarantee of a root within the interval. If so, it returns without further calculations. It initializes an iteration counter and continues refining the interval until the width is less than the tolerance. In each iteration, it calculates the midpoint `c` of the interval. If `f(c) == 0.0`, `c` is an exact root, so it adds `c` to the roots vector and returns. Otherwise, it checks whether the sign change occurs in the interval `[a, c]` or `[c, b]` and updates the interval boundaries accordingly.
+
+3. The `all_roots()` function iterates over a range (`start` to `ending`), incrementing by `step` to check each subinterval `[i, i + step]`. If the function changes sign within an interval, it calls `Bisection()` with that interval and stores the result in the roots vector. Once all roots within the specified range are found, it prints each root.
+
+4. The `bisection()` function calculates `xmax` to set the search interval to `[-xmax, xmax]`, providing a reasonable range for root-finding based on the polynomial’s behavior. It then calls `all_roots` with a step size of `0.01` and a tolerance of `1e-6` to find and print all roots within the range.
