@@ -251,9 +251,13 @@ The Bisection method can solve any system of linear equations.
 
 4. The `bisection()` function calculates `xmax` to set the search interval to `[-xmax, xmax]`, providing a reasonable range for root-finding based on the polynomial’s behavior. It then calls `all_roots` with a step size of `0.01` and a tolerance of `1e-6` to find and print all roots within the range.
 
+---
+
 ### Example Walkthrough
 
 
+
+---
 
 ### Contributions
 
