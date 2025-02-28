@@ -34,7 +34,7 @@ The Jacobi iterative method can solve any number of systems of linear equations.
 
 1. This program first checks if the augmented matrix provided is diagonally dominant or not. The `diagonal()` function performs this check. If the matrix is diagonally dominant or convertible to a diagonally dominant form, it keeps or converts the matrix to that form and returns `true`. If the matrix is not diagonally dominant or convertible, it returns `false`, and the program exits since the Jacobi method requires the augmented matrix to be in this form.
 
-2. If `true`, the program proceeds to solve the equations. The tolerance and the maximum number of iterations are set in the program.
+2. If `true`,  the program proceeds to solve the equations. The tolerance and the maximum number of iterations are set in the program.
 
 3. It takes the set of initial variable values in a vector (`x0`, `y0`, `z0`, ...) and, for each equation (or row of the matrix), calculates the next set of variable values (`x1`, `y1`, `z1`, ...) using the `nextVal()` function and stores them in another vector.
 
